@@ -1,0 +1,49 @@
+<%= form_with(model: match) do |form| %>
+  <% if match.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(match.errors.count, "error") %> prohibited this match from being saved:</h2>
+
+      <ul>
+        <% match.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card">
+    <div class="card-header">
+      Match
+    </div>
+
+    <div class="card-body">
+      <div class="mb-3">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :details %>
+        <%= form.text_field :details, class: 'form-control' %>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Participants
+        </div>
+        <div class="card-body">
+          <%= form.fields_for :participants do |participant_form| %>
+            <%= render "participant_fields", f: participant_form %>
+          <% end %>
+          <%= link_to_add_fields "Add Participants", form, :participants %>
+        </div>
+      </div>
+
+      <div class="mb-3 mt-3">
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
