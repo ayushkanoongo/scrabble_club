@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Leader Board</h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Member</th>
+      <th>Matches</th>
+      <th>Average Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= "#{member.first_name} #{member.last_name}" %></td>
+        <td><%= member.number_of_matches %></td>
+        <td><%= member.average_score.round %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

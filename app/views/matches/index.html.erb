@@ -27,3 +27,7 @@
 <br>
 
 <%= link_to 'New Match', new_match_path %>
+
+<div class="apple_pagination">
+  <%= will_paginate @matches, :container => false %>
+</div>

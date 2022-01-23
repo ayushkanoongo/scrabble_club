@@ -1,29 +1,60 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @member.first_name %>
-</p>
+<div class="card">
+  <div class="card-header">
+    <%= "Member Deatils" %>
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>First name:</strong>
+      <%= @member.first_name %>
+    </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @member.last_name %>
-</p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @member.last_name %>
+    </p>
 
-<p>
-  <strong>Contact number:</strong>
-  <%= @member.phone %>
-</p>
+    <p>
+      <strong>Contact number:</strong>
+      <%= @member.phone %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @member.email %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @member.email %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @member.address %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @member.address %>
+    </p>
+  </div>
+
+  <div class="p-3">
+    <div class="card">
+      <div class="card-header">
+        <%= "Match Deatils" %>
+      </div>
+      <div class="card-body">
+        <p>
+          <strong>Number of wins: <%= @win %></strong>
+        </p>
+        <p>
+          <strong>Number of losses: <%= @los %> </strong>
+        </p>
+        <p>
+          <strong>Average score: <%= @member&.participants&.pluck(:score)&.sum / @member&.participants&.pluck(:score)&.count if @member&.participants&.count > 0 %></strong>
+        </p>
+        <p>
+          <strong>Highest score: <%= @member&.participants.order('score DESC')&.first&.score || 0 %></strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>

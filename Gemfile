@@ -58,3 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Others
 gem 'rubocop', require: false
 gem 'bullet', group: 'development'
+gem 'will_paginate'
