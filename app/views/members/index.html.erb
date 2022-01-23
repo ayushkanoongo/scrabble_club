@@ -33,3 +33,7 @@
 <br>
 
 <%= link_to 'New Member', new_member_path %>
+
+<div class="apple_pagination">
+  <%= will_paginate @members, :container => false %>
+</div>

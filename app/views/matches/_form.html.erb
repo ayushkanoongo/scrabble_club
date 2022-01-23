@@ -5,7 +5,7 @@
 
       <ul>
         <% match.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li class="alert alert-danger"><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
@@ -47,3 +47,5 @@
     </div>
   </div>
 <% end %>
+
+<br/>

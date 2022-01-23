@@ -3,11 +3,13 @@ class MembersController < ApplicationController
 
   # GET /members or /members.json
   def index
-    @members = Member.all
+    @members = Member.sort_by_created_at.paginate(page: params[:page], per_page: 15)
   end
 
   # GET /members/1 or /members/1.json
-  def show; end
+  def show
+    @win, @los = @member.match_details
+  end
 
   # GET /members/new
   def new
