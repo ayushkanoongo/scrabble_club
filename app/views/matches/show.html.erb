@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @match.title %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @match.details %>
+</p>
+
+<% @participants.each.with_index(1) do |participant, index| %>
+  <p><%= "Player #{index}" %></p>
+  <p>
+    <strong>Details:</strong>
+    <%= participant.member.first_name %>
+  </p>
+  <p>
+    <strong>Details:</strong>
+    <%= participant.score %>
+  </p>
+<% end %>
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

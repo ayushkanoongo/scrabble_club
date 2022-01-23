@@ -9,6 +9,9 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
+require('./nested-forms/addFields')
+require('./nested-forms/removeFields')
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
