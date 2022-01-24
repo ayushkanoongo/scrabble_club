@@ -14,7 +14,7 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
-        <td><%= "#{member.first_name} #{member.last_name}" %></td>
+        <td><%= link_to "#{member.first_name} #{member.last_name}", "/members/#{member.id}" %></td>
         <td><%= member.number_of_matches %></td>
         <td><%= member.average_score.round %></td>
       </tr>
