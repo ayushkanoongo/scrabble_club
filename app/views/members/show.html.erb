@@ -49,9 +49,9 @@
         <p>
           <strong>Highest score: </strong>
           <ul>
-            <li>Score - <%= @member.highest_score.dig(:score) %></li>
-            <li>When - <%= @member.highest_score.dig(:match_time) %></li>
-            <li>Against - <%= @member.highest_score.dig(:another_player) %></li>
+            <li>Score - <%= @member.highest_score&.dig(:score) || 0 %></li>
+            <li>When - <%= @member.highest_score&.dig(:match_time) %></li>
+            <li>Against - <%= @member.highest_score&.dig(:another_player) %></li>
           </ul>
         </p>
       </div>
