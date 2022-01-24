@@ -44,10 +44,15 @@
           <strong>Number of losses: <%= @los %> </strong>
         </p>
         <p>
-          <strong>Average score: <%= @member&.participants&.pluck(:score)&.sum / @member&.participants&.pluck(:score)&.count if @member&.participants&.count > 0 %></strong>
+          <strong>Average score: <%= @member.average_score %></strong>
         </p>
         <p>
-          <strong>Highest score: <%= @member&.participants.order('score DESC')&.first&.score || 0 %></strong>
+          <strong>Highest score: </strong>
+          <ul>
+            <li>Score - <%= @member.highest_score.dig(:score) %></li>
+            <li>When - <%= @member.highest_score.dig(:match_time) %></li>
+            <li>Against - <%= @member.highest_score.dig(:another_player) %></li>
+          </ul>
         </p>
       </div>
     </div>
