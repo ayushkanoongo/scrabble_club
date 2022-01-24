@@ -6,7 +6,7 @@ boards to show their top performing players.
 
 ## Requirements
 * Ruby - 2.7.4
-* Rails 6.1.4
+* Rails - 6.1.4
 * PostgreSQL
 
 ## Database Schema
@@ -56,7 +56,7 @@ boards to show their top performing players.
 
 1. Remaining Functionality:
 
-  The given app contains all required functionality. No points are remaining according to the given document.
+  - The given app contains all required functionality. No points are remaining according to the given document.
 
 2. Which type of problem's you've faced during the test.
 
@@ -131,11 +131,8 @@ boards to show their top performing players.
     * Open the Browser the following URL:
       http://localhost:3000/
 
-4. Database Design
 
-
-
-5. Features that I have implemented:
+4. Features that I have implemented:
 
   - Member Leaderboard:
     leader board screen to list the members with the top 10 average scores, for those members who have played at least 10 matches.
